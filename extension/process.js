@@ -1,10 +1,9 @@
-browser.runtime.onMessage.addListener(function(result){
-    if (result == 1){
-        console.log("Warning: Phishing detected!!");
-        alert("Warning: Phishing detected!!");
-    }
-    // else if (result == -1){
-    //     console.log("No phishing detected");
-    //     alert("No phishing detected");
-    // }
-});
+browser.browserAction.onClicked.addListener((tab) => {
+    let port = browser.tabs.connect(tab.id, {
+        name: "establish_connection"
+    });
+
+    port.postMessage({
+        action: "showStatus"
+    });
+})

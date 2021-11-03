@@ -1,6 +1,6 @@
 ## How to install?
 1. Open 'about:debugging' in URL
-2. Load temperory extension.
+2. Load temporary extension.
 3. Choose manifest.json.
 4. Yo! It's installed ;)
 

@@ -129,14 +129,16 @@ let result = predict([
 	document.querySelectorAll('iframe').length<=0 ? -1 : 1
 ]);
 
+if (result == 1) Modal.ui(result);
 
-if (result == 1){
-    console.log("Warning: Phishing detected!!");
-    alert("Warning: Phishing detected!!");
-}
-// else if (result == -1){
-//     console.log("No phishing detected");
-//     alert("No phishing detected");
-// }
+browser.runtime.onConnect.addListener((port) => {
 
-browser.runtime.sendMessage(result);
+    console.assert(port.name == "establish_connection");
+    console.log(`content_script: ${port.sender.Tab}`);
+
+    port.onMessage.addListener(request => {
+        if (request.action == "showStatus") {
+            Modal.ui(result);
+        }
+    })
+});
