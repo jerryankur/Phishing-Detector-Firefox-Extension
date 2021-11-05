@@ -1,0 +1,21 @@
+Features present in dataset:
+1. Is Ip in URL
+2. Is Url Long
+3. Is Url Tiny
+4. Is Url AlphaNumeric
+5. Is Url trying to redirect
+6. is hypen present in URL
+7. is URL multidomain
+8. if Favicon Domain not identical
+9. is Illegal HTTPS URL
+10. is Loading img from different domain
+11. is Anchor from different domain
+12. is SCLink from different domain
+14. is form action invalid
+15. is mailto: protocol available
+16. is status bar tampered
+17. is http element iFrame present
+
+Labels -
+1 -> True
+-1 -> False
